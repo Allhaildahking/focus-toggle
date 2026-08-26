@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: Arial, sans-serif;
+  color: #171717;
+  background: #f4f4f0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: min(100%, 520px);
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+#message {
+  max-width: 380px;
+  margin: 0 auto 36px;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font: inherit;
+  font-weight: 700;
+}
+
+.toggle-track {
+  width: 58px;
+  height: 32px;
+  border-radius: 999px;
+  background: #c8c8c8;
+  padding: 4px;
+  transition: background 0.3s ease;
+}
+
+.toggle-knob {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.status {
+  margin-top: 24px;
+  font-size: 0.85rem;
+  opacity: 0.55;
+}
+
+body.focus-mode {
+  background: #111;
+  color: #f5f5f5;
+}
+
+body.focus-mode .toggle-track {
+  background: #f5f5f5;
+}
+
+body.focus-mode .toggle-knob {
+  background: #111;
+  transform: translateX(26px);
+}
+
+body.focus-mode #message {
+  opacity: 0.8;
+}
